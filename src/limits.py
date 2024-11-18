@@ -4,8 +4,8 @@ import json
 import base64
 
 app = Flask(__name__)
-MAX_MEM = '1024Mi'
-MAX_CPU = '1'
+MAX_MEM = '2048Mi'
+MAX_CPU = '4'
 
 @app.route('/mutate', methods=['POST'])
 def mutate():
