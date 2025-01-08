@@ -49,7 +49,7 @@ def mutate_pod(spec):
             container['resources'] = {}
         resources = container['resources']
         resources['limits'] = {'cpu': MAX_CPU, 'memory': MAX_MEM, 'hugepages-2Mi': 0, 'hugepages-1Gi': 0}
-        resources['requests'] = {'cpu': 0, 'memory': 0, 'hugepages-2Mi': 0, 'hugepages-1Gi': 0}
+        resources['requests'] = {'cpu': "1m", 'memory': 1, 'hugepages-2Mi': 0, 'hugepages-1Gi': 0}
 
 def mutate_cronjob(spec):
     if spec.get('concurrencyPolicy') != 'Forbid' and spec.get('concurrencyPolicy') != 'Replace':
